@@ -5,6 +5,8 @@ import pandas as pd
 from prophet import Prophet
 from statsmodels.tsa.arima.model import ARIMA
 import numpy as np
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 import folium
@@ -16,6 +18,7 @@ import math
 app = Flask(__name__)
 UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Updated hotspots with latitude, longitude, and location names
 hotspots = {
@@ -249,8 +252,8 @@ def generate_map(hotspots, average_people):
         avg_people = average_people.get(barangay, 0)
         if avg_people <= 7:
             color = 'green'
-        elif 7 > avg_people <= 10:
-            color = 'yellow'
+        elif 7 < avg_people <= 10:
+            color = 'orange'
         else:
             color = 'red'
         
