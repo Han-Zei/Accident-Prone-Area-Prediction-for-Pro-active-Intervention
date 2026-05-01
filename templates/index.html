@@ -254,6 +254,65 @@
             font-size: 1.2rem;
             text-align: center;
         }
+        .results-section,
+        .map-section {
+    margin-top: 40px;
+}
+
+.plots-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.plot-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-graph {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.map-frame {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.map-legend {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.legend-color.low {
+    background: green;
+}
+
+.legend-color.moderate {
+    background: orange;
+}
+
+.legend-color.high {
+    background: red;
+}
     </style>
     <script>
         function showLoading() {
@@ -326,38 +385,46 @@
     <!-- Display Forecast Plots -->
     <div class="forecast-plots">
         {% if plots %}
-            <h2>Forecast Results for {{ time_horizon | capitalize }} Time Horizon</h2>
-            {% for barangay, plot in plots.items() %}
-                <div class="forecast-plot">
-                    <h3>Forecast for {{ barangay }}</h3>
-                    <img src="data:image/png;base64,{{ plot }}" alt="Forecast Plot">
-                </div>
-            {% endfor %}
-        {% endif %}
+  <section id="forecast-results" class="results-section">
+    <h2>Forecast Results for {{ time_horizon | replace('_', ' ') | title }} Time Horizon</h2>
+
+    <div class="plots-container">
+      {% for barangay, plot in plots.items() %}
+        <div class="plot-card">
+          <h3>Forecast for {{ barangay | replace('_', ' ') }}</h3>
+
+          <img
+            src="data:image/png;base64,{{ plot }}"
+            alt="Forecast graph for {{ barangay }}"
+            class="forecast-graph"
+          >
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
     </div>
 
     <!-- Display Folium Map only if forecast has been run -->
     {% if plots %}
-    <div id="mapping-section" class="map-container">
-        <h2>People Involvement Map</h2>
-        <iframe src="/map"></iframe>
+  <section id="map-section" class="map-section">
+    <h2>People Involvement Map</h2>
+
+    <div class="map-legend">
+      <h3>Legend</h3>
+      <p><span class="legend-color low"></span> Low Risk (&lt;= 7 people involved)</p>
+      <p><span class="legend-color moderate"></span> Moderate Risk (7 - 10 people involved)</p>
+      <p><span class="legend-color high"></span> High Risk (&gt; 10 people involved)</p>
     </div>
-    <div class="legend-container">
-        <h3>Legend</h3>
-        <div class="legend-item">
-            <div class="legend-color legend-green"></div>
-            <span>Low Risk (<= 7 people involved)</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color legend-yellow"></div>
-            <span>Moderate Risk (7 - 10 people involved)</span>
-        </div>
-        <div class="legend-item">
-            <div class="legend-color legend-red"></div>
-            <span>High Risk (> 10 people involved)</span>
-        </div>
-    </div>
-    {% endif %}
+
+    <iframe
+      src="/map"
+      class="map-frame"
+      title="People Involvement Map"
+      loading="lazy">
+    </iframe>
+  </section>
+{% endif %}
 
     <!-- People Involved Frequency Section -->
     {% if people_involved_summary %}
