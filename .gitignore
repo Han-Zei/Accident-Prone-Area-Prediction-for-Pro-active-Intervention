@@ -1,0 +1,15 @@
+new_env/
+venv/
+.venv/
+
+__pycache__/
+*.pyc
+
+.env
+.vscode/
+
+uploads/*
+!uploads/.gitkeep
+
+*.log
+.DS_Store
