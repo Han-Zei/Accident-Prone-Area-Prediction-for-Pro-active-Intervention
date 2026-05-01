@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6e9c50dcc5741147222e6af3eeae8be9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_6e9c50dcc5741147222e6af3eeae8be9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6e9c50dcc5741147222e6af3eeae8be9 = L.map(
+                "map_6e9c50dcc5741147222e6af3eeae8be9",
+                {
+                    center: [16.687, 121.548],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_113b74a76872cd30b4f02754f1fa92cb = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_113b74a76872cd30b4f02754f1fa92cb.addTo(map_6e9c50dcc5741147222e6af3eeae8be9);
+        
+    
+            var marker_2473d91715315bf4b9ac2d01df622c8a = L.marker(
+                [16.7108, 121.5297],
+                {}
+            ).addTo(map_6e9c50dcc5741147222e6af3eeae8be9);
+        
+    
+            var icon_e927f8a473fd177a243818ed65cb4419 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_2473d91715315bf4b9ac2d01df622c8a.setIcon(icon_e927f8a473fd177a243818ed65cb4419);
+        
+    
+        var popup_51177d50e106a67290dd0c7cff336c30 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1611a9387dc5dab726fe4c987e102837 = $(`<div id="html_1611a9387dc5dab726fe4c987e102837" style="width: 100.0%; height: 100.0%;">Barangay 2: Avg People Involved 7.32</div>`)[0];
+                popup_51177d50e106a67290dd0c7cff336c30.setContent(html_1611a9387dc5dab726fe4c987e102837);
+            
+        
+
+        marker_2473d91715315bf4b9ac2d01df622c8a.bindPopup(popup_51177d50e106a67290dd0c7cff336c30)
+        ;
+
+        
+    
+    
+            var marker_6434940ea50880ea76144ed290f0c430 = L.marker(
+                [16.6307, 121.5624],
+                {}
+            ).addTo(map_6e9c50dcc5741147222e6af3eeae8be9);
+        
+    
+            var icon_3d0504571b2c2cf69211e10475c54e44 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6434940ea50880ea76144ed290f0c430.setIcon(icon_3d0504571b2c2cf69211e10475c54e44);
+        
+    
+        var popup_3b5fc4d7656f193482f82e3fa6cd6abb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_968699a3a53f9b1117e85224735f1866 = $(`<div id="html_968699a3a53f9b1117e85224735f1866" style="width: 100.0%; height: 100.0%;">Barangay 3: Avg People Involved 14.53</div>`)[0];
+                popup_3b5fc4d7656f193482f82e3fa6cd6abb.setContent(html_968699a3a53f9b1117e85224735f1866);
+            
+        
+
+        marker_6434940ea50880ea76144ed290f0c430.bindPopup(popup_3b5fc4d7656f193482f82e3fa6cd6abb)
+        ;
+
+        
+    
+    
+            var marker_cbee5fe8dfbc7e039e6aff827484853e = L.marker(
+                [16.7149, 121.5537],
+                {}
+            ).addTo(map_6e9c50dcc5741147222e6af3eeae8be9);
+        
+    
+            var icon_fb2f9c8de16b8fa45aebe70122451fbb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_cbee5fe8dfbc7e039e6aff827484853e.setIcon(icon_fb2f9c8de16b8fa45aebe70122451fbb);
+        
+    
+        var popup_1a10eb55606606b1666939408b52c525 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4b1aaebe7999d14ed254e8dde26fcec4 = $(`<div id="html_4b1aaebe7999d14ed254e8dde26fcec4" style="width: 100.0%; height: 100.0%;">Barangay 4: Avg People Involved 6.97</div>`)[0];
+                popup_1a10eb55606606b1666939408b52c525.setContent(html_4b1aaebe7999d14ed254e8dde26fcec4);
+            
+        
+
+        marker_cbee5fe8dfbc7e039e6aff827484853e.bindPopup(popup_1a10eb55606606b1666939408b52c525)
+        ;
+
+        
+    
+    
+            var marker_5e7f6ef8b0c52361b3b68564f7c755bd = L.marker(
+                [16.6955, 121.5935],
+                {}
+            ).addTo(map_6e9c50dcc5741147222e6af3eeae8be9);
+        
+    
+            var icon_ae5daa8cc46a7ada4f6abb3beacea8e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5e7f6ef8b0c52361b3b68564f7c755bd.setIcon(icon_ae5daa8cc46a7ada4f6abb3beacea8e5);
+        
+    
+        var popup_616d2118d2436fb54af1731f7a6e5cb1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bdeb7cb7a3041d5c842f589b39d329c1 = $(`<div id="html_bdeb7cb7a3041d5c842f589b39d329c1" style="width: 100.0%; height: 100.0%;">Barangay 6: Avg People Involved 14.74</div>`)[0];
+                popup_616d2118d2436fb54af1731f7a6e5cb1.setContent(html_bdeb7cb7a3041d5c842f589b39d329c1);
+            
+        
+
+        marker_5e7f6ef8b0c52361b3b68564f7c755bd.bindPopup(popup_616d2118d2436fb54af1731f7a6e5cb1)
+        ;
+
+        
+    
+    
+            var marker_903c0bf091384939d6546333aa7f7261 = L.marker(
+                [16.7149, 121.5537],
+                {}
+            ).addTo(map_6e9c50dcc5741147222e6af3eeae8be9);
+        
+    
+            var icon_82147ef67d55b57d5c4bf765b7d9037a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_903c0bf091384939d6546333aa7f7261.setIcon(icon_82147ef67d55b57d5c4bf765b7d9037a);
+        
+    
+        var popup_02e23df92a9cd5e2a523f503710a7222 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0be76d31262df856873d4b4a5afa89ac = $(`<div id="html_0be76d31262df856873d4b4a5afa89ac" style="width: 100.0%; height: 100.0%;">Barangay 7: Avg People Involved 7.09</div>`)[0];
+                popup_02e23df92a9cd5e2a523f503710a7222.setContent(html_0be76d31262df856873d4b4a5afa89ac);
+            
+        
+
+        marker_903c0bf091384939d6546333aa7f7261.bindPopup(popup_02e23df92a9cd5e2a523f503710a7222)
+        ;
+
+        
+    
+    
+            var marker_74ef90a7552c9f1122d90cf60016c982 = L.marker(
+                [16.6963, 121.6045],
+                {}
+            ).addTo(map_6e9c50dcc5741147222e6af3eeae8be9);
+        
+    
+            var icon_bfc56673548efa21af9b9ea4dc722b0e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_74ef90a7552c9f1122d90cf60016c982.setIcon(icon_bfc56673548efa21af9b9ea4dc722b0e);
+        
+    
+        var popup_83011d1769643a5808a79eb46dd8e7a4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_625cc96ac0169a8034b257ff026a2bb8 = $(`<div id="html_625cc96ac0169a8034b257ff026a2bb8" style="width: 100.0%; height: 100.0%;">Barangay 14: Avg People Involved 6.94</div>`)[0];
+                popup_83011d1769643a5808a79eb46dd8e7a4.setContent(html_625cc96ac0169a8034b257ff026a2bb8);
+            
+        
+
+        marker_74ef90a7552c9f1122d90cf60016c982.bindPopup(popup_83011d1769643a5808a79eb46dd8e7a4)
+        ;
+
+        
+    
+    
+            var marker_84a109e4f9725e90a9e732a992a2277b = L.marker(
+                [16.7149, 121.5537],
+                {}
+            ).addTo(map_6e9c50dcc5741147222e6af3eeae8be9);
+        
+    
+            var icon_8bfcda92059466a89b00926ec99acb8e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_84a109e4f9725e90a9e732a992a2277b.setIcon(icon_8bfcda92059466a89b00926ec99acb8e);
+        
+    
+        var popup_f15d600699f82d03c0ecdf504770e021 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a861bea2a55f54fc2ef8756d8d0cfad8 = $(`<div id="html_a861bea2a55f54fc2ef8756d8d0cfad8" style="width: 100.0%; height: 100.0%;">Barangay 18: Avg People Involved 14.08</div>`)[0];
+                popup_f15d600699f82d03c0ecdf504770e021.setContent(html_a861bea2a55f54fc2ef8756d8d0cfad8);
+            
+        
+
+        marker_84a109e4f9725e90a9e732a992a2277b.bindPopup(popup_f15d600699f82d03c0ecdf504770e021)
+        ;
+
+        
+    
+    
+            var marker_4fa4fbaf6cf4b9dc78b5de47d7625cc9 = L.marker(
+                [16.7149, 121.5537],
+                {}
+            ).addTo(map_6e9c50dcc5741147222e6af3eeae8be9);
+        
+    
+            var icon_189247d7dd62da169785e620b6fa444e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_4fa4fbaf6cf4b9dc78b5de47d7625cc9.setIcon(icon_189247d7dd62da169785e620b6fa444e);
+        
+    
+        var popup_0e054bc09cd138e4c4541d897602d42f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e24a4f69e1ae43a17c4cb11e1be0706f = $(`<div id="html_e24a4f69e1ae43a17c4cb11e1be0706f" style="width: 100.0%; height: 100.0%;">Barangay 22: Avg People Involved 7.48</div>`)[0];
+                popup_0e054bc09cd138e4c4541d897602d42f.setContent(html_e24a4f69e1ae43a17c4cb11e1be0706f);
+            
+        
+
+        marker_4fa4fbaf6cf4b9dc78b5de47d7625cc9.bindPopup(popup_0e054bc09cd138e4c4541d897602d42f)
+        ;
+
+        
+    
+    
+            var marker_2f00b8a27820aae28ac731ceda26f5ba = L.marker(
+                [16.7149, 121.5537],
+                {}
+            ).addTo(map_6e9c50dcc5741147222e6af3eeae8be9);
+        
+    
+            var icon_f2ad214d384eb52cfd7b272b0514f413 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2f00b8a27820aae28ac731ceda26f5ba.setIcon(icon_f2ad214d384eb52cfd7b272b0514f413);
+        
+    
+        var popup_2180bfd3775398b96e88de6b929f7040 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44c622a892fc2a9cd342dffe7647ccbe = $(`<div id="html_44c622a892fc2a9cd342dffe7647ccbe" style="width: 100.0%; height: 100.0%;">Barangay 23: Avg People Involved 14.59</div>`)[0];
+                popup_2180bfd3775398b96e88de6b929f7040.setContent(html_44c622a892fc2a9cd342dffe7647ccbe);
+            
+        
+
+        marker_2f00b8a27820aae28ac731ceda26f5ba.bindPopup(popup_2180bfd3775398b96e88de6b929f7040)
+        ;
+
+        
+    
+</script>
+</html>

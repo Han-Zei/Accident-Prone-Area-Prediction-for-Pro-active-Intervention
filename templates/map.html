@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f1084f908f072f1cdbb4d332f7844b30 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f1084f908f072f1cdbb4d332f7844b30" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f1084f908f072f1cdbb4d332f7844b30 = L.map(
+                "map_f1084f908f072f1cdbb4d332f7844b30",
+                {
+                    center: [16.7, 121.56],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5dba867ad48ecb644c2e13ba946b40c4 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_5dba867ad48ecb644c2e13ba946b40c4.addTo(map_f1084f908f072f1cdbb4d332f7844b30);
+        
+    
+            var marker_cluster_2fe40a5fc054f41aff3b506c3004ea15 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var marker_3beb838ec7380ecee42ab5ae288d5ec5 = L.marker(
+                [16.71728, 121.54651],
+                {}
+            ).addTo(marker_cluster_2fe40a5fc054f41aff3b506c3004ea15);
+        
+    
+            var icon_8f089965129ec8108d052cfafb0809ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3beb838ec7380ecee42ab5ae288d5ec5.setIcon(icon_8f089965129ec8108d052cfafb0809ab);
+        
+    
+        var popup_806ef8eb2c0454b3811d8452654683de = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7c1b7bf5cdb15f6d37a3d642f18637d3 = $(`<div id="html_7c1b7bf5cdb15f6d37a3d642f18637d3" style="width: 100.0%; height: 100.0%;"><strong>Barangay 2</strong><br>Ambalatungan<br>Average People Involved: 6.50</div>`)[0];
+                popup_806ef8eb2c0454b3811d8452654683de.setContent(html_7c1b7bf5cdb15f6d37a3d642f18637d3);
+            
+        
+
+        marker_3beb838ec7380ecee42ab5ae288d5ec5.bindPopup(popup_806ef8eb2c0454b3811d8452654683de)
+        ;
+
+        
+    
+    
+            marker_3beb838ec7380ecee42ab5ae288d5ec5.bindTooltip(
+                `<div>
+                     Barangay 2 - Ambalatungan (Avg: 6.50)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ff7ca7c6ed18b837f2da2ec2e31a788d = L.marker(
+                [16.64954, 121.5587],
+                {}
+            ).addTo(marker_cluster_2fe40a5fc054f41aff3b506c3004ea15);
+        
+    
+            var icon_ca384f6c0e5c208ca294af4df5848cb2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ff7ca7c6ed18b837f2da2ec2e31a788d.setIcon(icon_ca384f6c0e5c208ca294af4df5848cb2);
+        
+    
+        var popup_8f274424390b6ecd309c2a596c7a753a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eede16d862a8782f00974e3104b63c15 = $(`<div id="html_eede16d862a8782f00974e3104b63c15" style="width: 100.0%; height: 100.0%;"><strong>Barangay 3</strong><br>Balintocatoc<br>Average People Involved: 13.03</div>`)[0];
+                popup_8f274424390b6ecd309c2a596c7a753a.setContent(html_eede16d862a8782f00974e3104b63c15);
+            
+        
+
+        marker_ff7ca7c6ed18b837f2da2ec2e31a788d.bindPopup(popup_8f274424390b6ecd309c2a596c7a753a)
+        ;
+
+        
+    
+    
+            marker_ff7ca7c6ed18b837f2da2ec2e31a788d.bindTooltip(
+                `<div>
+                     Barangay 3 - Balintocatoc (Avg: 13.03)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_47daa0282f0ce1318fcd19538a3c34fc = L.marker(
+                [16.669109, 121.563553],
+                {}
+            ).addTo(marker_cluster_2fe40a5fc054f41aff3b506c3004ea15);
+        
+    
+            var icon_1db132a7d64f3ebbb781ecb6fcc47a09 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_47daa0282f0ce1318fcd19538a3c34fc.setIcon(icon_1db132a7d64f3ebbb781ecb6fcc47a09);
+        
+    
+        var popup_657b16a0fef2dade6ed57cdd303404c4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_57bc7ddfd3d12bdb276467bcce35a85a = $(`<div id="html_57bc7ddfd3d12bdb276467bcce35a85a" style="width: 100.0%; height: 100.0%;"><strong>Barangay 4</strong><br>Baluarte<br>Average People Involved: 7.25</div>`)[0];
+                popup_657b16a0fef2dade6ed57cdd303404c4.setContent(html_57bc7ddfd3d12bdb276467bcce35a85a);
+            
+        
+
+        marker_47daa0282f0ce1318fcd19538a3c34fc.bindPopup(popup_657b16a0fef2dade6ed57cdd303404c4)
+        ;
+
+        
+    
+    
+            marker_47daa0282f0ce1318fcd19538a3c34fc.bindTooltip(
+                `<div>
+                     Barangay 4 - Baluarte (Avg: 7.25)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_027f5cb3fbc12361fa234eab4d4bad42 = L.marker(
+                [16.70652, 121.596062],
+                {}
+            ).addTo(marker_cluster_2fe40a5fc054f41aff3b506c3004ea15);
+        
+    
+            var icon_5585a9c2c2bf9a54e15a0b461f398019 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_027f5cb3fbc12361fa234eab4d4bad42.setIcon(icon_5585a9c2c2bf9a54e15a0b461f398019);
+        
+    
+        var popup_754e938021053b697a3bf094625c74c9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_230037c4febb92b416d0c50afb728843 = $(`<div id="html_230037c4febb92b416d0c50afb728843" style="width: 100.0%; height: 100.0%;"><strong>Barangay 6</strong><br>Batal<br>Average People Involved: 14.52</div>`)[0];
+                popup_754e938021053b697a3bf094625c74c9.setContent(html_230037c4febb92b416d0c50afb728843);
+            
+        
+
+        marker_027f5cb3fbc12361fa234eab4d4bad42.bindPopup(popup_754e938021053b697a3bf094625c74c9)
+        ;
+
+        
+    
+    
+            marker_027f5cb3fbc12361fa234eab4d4bad42.bindTooltip(
+                `<div>
+                     Barangay 6 - Batal (Avg: 14.52)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3720ccbea4f8f7547831a4c54f1a94f9 = L.marker(
+                [16.70012, 121.55146],
+                {}
+            ).addTo(marker_cluster_2fe40a5fc054f41aff3b506c3004ea15);
+        
+    
+            var icon_76c581938e14f741fb161aaa303224fd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3720ccbea4f8f7547831a4c54f1a94f9.setIcon(icon_76c581938e14f741fb161aaa303224fd);
+        
+    
+        var popup_9cdf10afd7a6c3153203164fb719afc1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_91f8d574ae2c33017d302b0b1727e90c = $(`<div id="html_91f8d574ae2c33017d302b0b1727e90c" style="width: 100.0%; height: 100.0%;"><strong>Barangay 7</strong><br>Buenavista<br>Average People Involved: 6.41</div>`)[0];
+                popup_9cdf10afd7a6c3153203164fb719afc1.setContent(html_91f8d574ae2c33017d302b0b1727e90c);
+            
+        
+
+        marker_3720ccbea4f8f7547831a4c54f1a94f9.bindPopup(popup_9cdf10afd7a6c3153203164fb719afc1)
+        ;
+
+        
+    
+    
+            marker_3720ccbea4f8f7547831a4c54f1a94f9.bindTooltip(
+                `<div>
+                     Barangay 7 - Buenavista (Avg: 6.41)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_36810bfbd076aae9327c6dee18ae611b = L.marker(
+                [16.70022, 121.60514],
+                {}
+            ).addTo(marker_cluster_2fe40a5fc054f41aff3b506c3004ea15);
+        
+    
+            var icon_d60efef7cd6b5b8d15cf048c57c7c08c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_36810bfbd076aae9327c6dee18ae611b.setIcon(icon_d60efef7cd6b5b8d15cf048c57c7c08c);
+        
+    
+        var popup_fb8bf83f012467d32d4cb3bd7b2ba6da = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_66f28158b93b006ff206f9108c5d9844 = $(`<div id="html_66f28158b93b006ff206f9108c5d9844" style="width: 100.0%; height: 100.0%;"><strong>Barangay 14</strong><br>Divisoria<br>Average People Involved: 6.12</div>`)[0];
+                popup_fb8bf83f012467d32d4cb3bd7b2ba6da.setContent(html_66f28158b93b006ff206f9108c5d9844);
+            
+        
+
+        marker_36810bfbd076aae9327c6dee18ae611b.bindPopup(popup_fb8bf83f012467d32d4cb3bd7b2ba6da)
+        ;
+
+        
+    
+    
+            marker_36810bfbd076aae9327c6dee18ae611b.bindTooltip(
+                `<div>
+                     Barangay 14 - Divisoria (Avg: 6.12)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6f8f038763dfb987dfbf719d7615fb75 = L.marker(
+                [16.706659, 121.556343],
+                {}
+            ).addTo(marker_cluster_2fe40a5fc054f41aff3b506c3004ea15);
+        
+    
+            var icon_9ad04ac4e330d2389e7e1c7ad488c97a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6f8f038763dfb987dfbf719d7615fb75.setIcon(icon_9ad04ac4e330d2389e7e1c7ad488c97a);
+        
+    
+        var popup_95a822937f65082eb4e6b17afc55bb65 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1f59cd9a71843732c0111e7a136551f8 = $(`<div id="html_1f59cd9a71843732c0111e7a136551f8" style="width: 100.0%; height: 100.0%;"><strong>Barangay 18</strong><br>Mabini<br>Average People Involved: 12.29</div>`)[0];
+                popup_95a822937f65082eb4e6b17afc55bb65.setContent(html_1f59cd9a71843732c0111e7a136551f8);
+            
+        
+
+        marker_6f8f038763dfb987dfbf719d7615fb75.bindPopup(popup_95a822937f65082eb4e6b17afc55bb65)
+        ;
+
+        
+    
+    
+            marker_6f8f038763dfb987dfbf719d7615fb75.bindTooltip(
+                `<div>
+                     Barangay 18 - Mabini (Avg: 12.29)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a1d9791bc6f6d969db7ba5004c64f51b = L.marker(
+                [16.678699, 121.539391],
+                {}
+            ).addTo(marker_cluster_2fe40a5fc054f41aff3b506c3004ea15);
+        
+    
+            var icon_116563864c1df033def6fec321b0544c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a1d9791bc6f6d969db7ba5004c64f51b.setIcon(icon_116563864c1df033def6fec321b0544c);
+        
+    
+        var popup_64830c2b9bfcdd2d6e842715624c033f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dadea203e32794292d68843f780d3c01 = $(`<div id="html_dadea203e32794292d68843f780d3c01" style="width: 100.0%; height: 100.0%;"><strong>Barangay 22</strong><br>Patul<br>Average People Involved: 7.01</div>`)[0];
+                popup_64830c2b9bfcdd2d6e842715624c033f.setContent(html_dadea203e32794292d68843f780d3c01);
+            
+        
+
+        marker_a1d9791bc6f6d969db7ba5004c64f51b.bindPopup(popup_64830c2b9bfcdd2d6e842715624c033f)
+        ;
+
+        
+    
+    
+            marker_a1d9791bc6f6d969db7ba5004c64f51b.bindTooltip(
+                `<div>
+                     Barangay 22 - Patul (Avg: 7.01)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8c24ecbb2828a4afea409119851194af = L.marker(
+                [16.71932, 121.55374],
+                {}
+            ).addTo(marker_cluster_2fe40a5fc054f41aff3b506c3004ea15);
+        
+    
+            var icon_40df2cac109ddf6d394d019692d25274 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8c24ecbb2828a4afea409119851194af.setIcon(icon_40df2cac109ddf6d394d019692d25274);
+        
+    
+        var popup_44c6c277ad8233b2bdfee90d7f595783 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a536b33f01501df5d522eb78e6ccfbd6 = $(`<div id="html_a536b33f01501df5d522eb78e6ccfbd6" style="width: 100.0%; height: 100.0%;"><strong>Barangay 23</strong><br>Rizal<br>Average People Involved: 12.53</div>`)[0];
+                popup_44c6c277ad8233b2bdfee90d7f595783.setContent(html_a536b33f01501df5d522eb78e6ccfbd6);
+            
+        
+
+        marker_8c24ecbb2828a4afea409119851194af.bindPopup(popup_44c6c277ad8233b2bdfee90d7f595783)
+        ;
+
+        
+    
+    
+            marker_8c24ecbb2828a4afea409119851194af.bindTooltip(
+                `<div>
+                     Barangay 23 - Rizal (Avg: 12.53)
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_2fe40a5fc054f41aff3b506c3004ea15.addTo(map_f1084f908f072f1cdbb4d332f7844b30);
+        
+</script>
+</html>

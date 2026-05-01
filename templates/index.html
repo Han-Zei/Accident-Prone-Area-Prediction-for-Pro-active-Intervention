@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rescue Santiago Control Center</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            padding: 20px;
+            margin: 0;
+            color: #e0e0e0;
+        }
+        h1, h2 {
+            color: #f0ad4e;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        h2 {
+            font-size: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #2c3e50;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .upload-form {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border: 2px dashed #f39c12;
+        }
+        label {
+            display: block;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #f39c12;
+        }
+        input[type="file"], select {
+            padding: 10px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: #34495e;
+            color: #e0e0e0;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 1rem;
+            background-color: #f39c12;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #e67e22;
+        }
+        .metrics {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .metric-item {
+            background-color: #34495e;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            width: 30%;
+        }
+        .metric-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            color: #f39c12;
+        }
+        .metric-item span {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e0e0e0;
+        }
+        .forecast-plots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .forecast-plot {
+            flex: 1 1 calc(50% - 20px);
+            background-color: #34495e;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .forecast-plot img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .map-container {
+            margin-top: 40px;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+        /* Loading Spinner */
+        .loading {
+            text-align: center;
+            font-size: 1.4rem;
+            color: #f39c12;
+        }
+        /* Menu Bar */
+        .menu {
+            background-color: #f39c12;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .menu a {
+            color: #1a1a1a;
+            font-size: 1.4rem;
+            margin: 0 20px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .menu a:hover {
+            color: #e67e22;
+        }
+        /* Accident Forecast and Warning Section */
+        .accident-forecast {
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 12px;
+            background-color: #fdf2e9;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .accident-forecast h2 {
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: #333;
+        }
+        .accident-forecast table {
+            margin: 0 auto; /* Center the table */
+            text-align: center;
+        }
+        .warnings-container {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #fff5f5;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+            border: 2px solid #ff0000;
+            color: #ff0000;
+            position: relative;
+            text-align: center;
+        }
+        .warnings-container h2 {
+            color: #ff0000;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .warning-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            background-image: url('https://img.icons8.com/ios-filled/100/ff0000/warning.png');
+            background-size: cover;
+        }
+        .warnings-container ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        .warnings-container li {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .legend-container {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #34495e;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .legend-container h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #f39c12;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 4px;
+        }
+        .legend-green {
+            background-color: green;
+        }
+        .legend-yellow {
+            background-color: yellow;
+        }
+        .legend-red {
+            background-color: red;
+        }
+        .people-involved-summary {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #34495e;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .people-involved-summary table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            color: #e0e0e0;
+        }
+        .people-involved-summary th, .people-involved-summary td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #555;
+        }
+        .people-involved-summary th {
+            background-color: #f39c12;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        .people-involved-summary td {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function showLoading() {
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+<div class="menu">
+    <a href="#forecasting-section">Forecasting Section</a>
+    <a href="#mapping-section">Mapping Section</a>
+    <a href="#expected-frequency-section">Expected Frequency Section</a>
+    <a href="#alert-section">Alert: Accident Assessment Section</a>
+</div>
+
+<div class="container">
+    <h1>Rescue Santiago Forecasting</h1>
+
+    <!-- Form for Forecast Plots -->
+    <div id="forecasting-section" class="upload-form">
+        <form action="/" method="POST" enctype="multipart/form-data" onsubmit="showLoading()">
+            <label for="file">Upload Data for Forecasting (CSV)</label>
+            <input type="file" id="file" name="file" accept=".csv" required>
+
+            <label for="time_horizon">Select Time Horizon for Plot</label>
+            <select id="time_horizon" name="time_horizon" required>
+                <option value="3_weeks">3 Weeks</option>
+                <option value="1_month">1 Month</option>
+                <option value="3_months">3 Months</option>
+                <option value="6_months">6 Months</option>
+                <option value="9_months">9 Months</option>
+                <option value="12_months">12 Months</option>
+            </select>
+
+            <label for="barangay">Select Barangay to Filter</label>
+            <select id="barangay" name="barangay">
+                <option value="">All Barangays</option>
+                {% for key, hotspot in hotspots.items() %}
+                    <option value="{{ key }}">{{ hotspot.name }}</option>
+                {% endfor %}
+            </select>
+            
+            <button type="submit">Run Forecast</button>
+        </form>
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading" style="display: none;">
+            Processing your forecast, please wait...
+        </div>
+    </div>
+
+    <!-- Display Metrics -->
+    {% if metrics %}
+    <div class="metrics">
+        <div class="metric-item">
+            <h3>RMSE</h3>
+            <span>{{ metrics.rmse }}</span>
+        </div>
+        <div class="metric-item">
+            <h3>MSE</h3>
+            <span>{{ metrics.mse }}</span>
+        </div>
+        <div class="metric-item">
+            <h3>MAE</h3>
+            <span>{{ metrics.mae }}</span>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Display Forecast Plots -->
+    <div class="forecast-plots">
+        {% if plots %}
+            <h2>Forecast Results for {{ time_horizon | capitalize }} Time Horizon</h2>
+            {% for barangay, plot in plots.items() %}
+                <div class="forecast-plot">
+                    <h3>Forecast for {{ barangay }}</h3>
+                    <img src="data:image/png;base64,{{ plot }}" alt="Forecast Plot">
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Display Folium Map only if forecast has been run -->
+    {% if plots %}
+    <div id="mapping-section" class="map-container">
+        <h2>People Involvement Map</h2>
+        <iframe src="/map"></iframe>
+    </div>
+    <div class="legend-container">
+        <h3>Legend</h3>
+        <div class="legend-item">
+            <div class="legend-color legend-green"></div>
+            <span>Low Risk (<= 7 people involved)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color legend-yellow"></div>
+            <span>Moderate Risk (7 - 10 people involved)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color legend-red"></div>
+            <span>High Risk (> 10 people involved)</span>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- People Involved Frequency Section -->
+    {% if people_involved_summary %}
+    <div id="expected-frequency-section" class="people-involved-summary">
+        <h2>Expected People Involved Frequency</h2>
+        <table>
+            <tr>
+                <th>Time Period</th>
+                <th>Expected People Involved</th>
+            </tr>
+            {% for month, count in people_involved_summary.items() %}
+            <tr>
+                <td>{{ month.replace('_', ' ') }}</td>
+                <td>{{ count | round(2) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+
+    <!-- Warning Messages and Recommendations -->
+    {% if warnings %}
+    <div id="alert-section" class="warnings-container">
+        <h2><div class="warning-icon"></div>Alert: Accident Risk Assessment</h2>
+
+        <!-- High and Moderate Risk Sections -->
+        {% for warning in warnings %}
+            <p><strong>{{ warning.message }}</strong></p>
+            <ul style="display: inline-block; text-align: left;">
+                {% for barangay in warning.barangays %}
+                <li>{{ barangay }}</li>
+                {% endfor %}
+            </ul>
+            <p style="text-align: center;"><strong>Recommended Actions:</strong></p>
+            <ul>
+                {% for recommendation in warning.recommendations %}
+                <li>{{ recommendation }}</li>
+                {% endfor %}
+            </ul>
+            <hr>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
